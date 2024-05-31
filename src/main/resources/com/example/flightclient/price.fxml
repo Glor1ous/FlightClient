@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@../../../style/main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flightclient.Controller.PricesController">
+
+    <!-- Routes Section -->
+    <TableView fx:id="flightsTable" layoutX="30.0" layoutY="71.0" prefHeight="520.0" prefWidth="462.0" style="-fx-border-color: #2771B9; -fx-border-width: 5;" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="routeColumn" prefWidth="150.0" text="Маршруты">
+                <cellValueFactory>
+                    <PropertyValueFactory property="route" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Дата">
+                <cellValueFactory>
+                    <PropertyValueFactory property="date" />
+                </cellValueFactory>
+            </TableColumn>
+
+
+            <TableColumn fx:id="priceColumn" prefWidth="150.0" text="Цена" />
+
+        </columns>
+    </TableView>
+
+    <!-- Logo and Buttons Section -->
+    <GridPane alignment="CENTER" hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" />
+            <ColumnConstraints percentWidth="50" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+
+    <HBox layoutX="723.0" layoutY="607.0" spacing="10">
+        <Button fx:id="buyTicketsButton" onAction="#buyTickets" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #2771B9;" text="Купить" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+        <Button fx:id="logoutButton" onAction="#handleLogout" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #2771B9;" text="Выход" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+
+    </HBox>
+    <MenuBar layoutX="34.0" layoutY="17.0" prefHeight="35.0" prefWidth="204.0" style="-fx-background-color: #2771B9;">
+        <menus>
+            <Menu mnemonicParsing="false" text="Файл">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#callRefreshFunc" text="Обновить" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Цены">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Посмотреть цены" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Мои брони">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#callBookingModal" text="Управлять бнью" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <ImageView fx:id="profileIcon" fitHeight="54.0" fitWidth="44.0" layoutX="989.0" layoutY="31.0">
+      <image>
+         <Image url="@../../../images/logoprofil.png" />
+      </image></ImageView>
+   <Label layoutX="30.0" layoutY="661.0" text="8 (989) 264-08-62 бесплатно по России">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font>
+   </Label>
+   <Label layoutX="30.0" layoutY="624.0" text="Контакты:">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font>
+   </Label>
+   <Button fx:id="logoutButton1" layoutX="973.0" layoutY="85.0" onAction="#handleProfileIconClick" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #2771B9;" text="Профиль" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Button>
+   <ImageView fx:id="logoImage1" fitHeight="393.0" fitWidth="328.0" layoutX="601.0" layoutY="116.0">
+      <image>
+         <Image url="@../../../images/logo.png" />
+      </image>
+   </ImageView>
+   <Line endX="227.0" layoutX="702.0" layoutY="509.0" startX="-100.0" stroke="#2771b9" strokeWidth="8.0" />
+   <Line endX="227.0" layoutX="702.0" layoutY="116.0" startX="-100.0" stroke="#2771b9" strokeWidth="8.0" />
+   <Line endX="227.0" layoutX="374.0" layoutY="116.0" startX="227.0" startY="393.0" stroke="#2771b9" strokeWidth="8.0" />
+   <Line endX="227.0" layoutX="702.0" layoutY="116.0" startX="227.0" startY="393.0" stroke="#2771b9" strokeWidth="8.0" />
+
+
+
+</AnchorPane>

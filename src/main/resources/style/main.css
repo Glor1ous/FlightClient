@@ -1,0 +1,30 @@
+.menu-bar .label {
+    -fx-text-fill: #ffffff;
+}
+
+.menu-bar {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+
+
+    -fx-font-weight: bold;
+
+    /*-fx-background-color: linear-gradient(from 0px 0px to 0px 50px, rgba(35,69,105,1) 0%, rgba(69,105,144,1) 100%); */
+
+    -fx-border-width: 2;
+    -fx-border-style: none none none none;
+
+}
+
+.context-menu {
+    -fx-font-weight: bold;
+    -fx-background-color:  #2771B9;
+}
+.context-menu:hover > .menu-item:focused{
+    -fx-background-color: rgb(158, 173, 255);
+}
+.menu-item:focused {
+    -fx-background-color: rgb(176, 191, 255);
+}
+
